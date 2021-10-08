@@ -1,0 +1,14 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    
+}
+
+/*body*/
+
+h1{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
