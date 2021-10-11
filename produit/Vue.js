@@ -1,17 +1,19 @@
 Vue.component("accueil", {
   model: {},
 
-  template: `<div class="container">
+  template: `
+  <div class"titre"> <h1>Terre Shop </h1> </div>
+  <div class="container">
     <div class="row">
       <div class="col-4">
         <a
-          <div class="choice" @click="choose('mug')">
+        <div class="choice" @click="choose('mug')">
           <img src="../image/TerreShop/mug-blanc.jpg"  class="img-fluid" alt="Responsive image">
           <h2></h2>
           <p></p>
         <a/>
         </div>
-      </div>
+    </div>
 
       <div class="col-4">
        <a
@@ -62,7 +64,6 @@ Vue.component("mug", {
     </div>
   </div>`,
 }),
-
   Vue.component("pull", {
     template: `<div class="container">
     <div class="row">
@@ -79,9 +80,7 @@ Vue.component("mug", {
     </select>
     </div>
   </div>`,
-
   }),
-
   Vue.component("sac", {
     template: `<div class="container">
     <div class="row">
@@ -99,7 +98,6 @@ Vue.component("mug", {
     </div>
   </div>`,
   }),
-
   Vue.component("reservation", {});
 
 const vue = new Vue({
