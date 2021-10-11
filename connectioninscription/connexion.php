@@ -10,11 +10,7 @@ if ($_POST) {
                 ':email' => $_POST['email']
             )
         );
-<<<<<<< HEAD:connectioninscription/connexion.php
-        if ($check->rowCount() == 1) {//verifie bhbbbbbsi une entré existe
-=======
         if ($check->rowCount() == 1) {//verifie si une entré existe
->>>>>>> 024ddf2fd617c4a00e173e110f038cedb3a3cc76:goodiesshop/connectioninscription/connexion.php
             $member = $check->fetch(PDO::FETCH_ASSOC);//convertie cette entré en tableau à parcourir
             if (password_verify($_POST['password'], $member['password'])) {//déhash le mot de passe
                 header('Location:accueil.php');
