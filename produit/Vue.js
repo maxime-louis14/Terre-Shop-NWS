@@ -1,20 +1,18 @@
-  
+
 Vue.component("accueil", {
   model: {},
 
-  template: `
-  <div class="container">
+  template:`<div class="container">
   <h1>Terre Shop</h1>
     <div class="row">
       <div class="col-4">
-        <a
-        <div class="choice" @click="choose('mug')">
+        <a <div class="choice" @click="choose('mug')">
           <img src="../image/TerreShop/mug-blanc.jpg"  class="img-fluid" alt="Responsive image">
           <h2></h2>
           <p></p>
+          </div>
         <a/>
-        </div>
-    </div>
+      </div>    
 
       <div class="col-4">
        <a
@@ -33,11 +31,11 @@ Vue.component("accueil", {
           <img src="../image/TerreShop/NWS-logo.jpg" @click="choose('sac')" class="img-fluid" alt="Responsive image">
           <h2> </h2>
           <p> </p>
-        </div>
+          </div>
         </a>
       </div>
-    </div>
-  </div>`,
+  </div> 
+</div> `,
 
   // C’est pour changer les pages home.
 
