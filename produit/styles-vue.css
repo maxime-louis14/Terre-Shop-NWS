@@ -1,12 +1,12 @@
 body {
-  background-color: rgb(203, 224, 236);
+  background-color: rgb(85, 165, 211);
   background-repeat: no-repeat;
   background-size: 100%;
 }
 
 .pxmug {
   margin-top: 35px;
-  background-color: white;
+  background-color: rgb(159, 194, 240);
   height: 565px;
   padding: -9px;
   border-radius: 0.9rem;
@@ -21,32 +21,28 @@ body {
   margin-top: 2%;
 }
 
-.choice img {
-  margin-left: 50px;
-  width: 80%;
-  border-radius: 2.5%;
-}
-
 .choice {
   margin: 20px;
-  margin-top: 50px;
-  background-color: white;
+  margin-top: 150px;
+  background-color: rgb(204, 231, 235);
   height: 550px;
   padding: 50px;
   border-radius: 0.9rem;
   transition: 0.5s;
 }
 
+.choice img {
+  margin-left: 50px;
+  width: 80%;
+  border-radius: 2.5%;
+}
+
 .choice:hover {
   padding-top: 20px;
   margin-top: 40px;
-  background-color: rgb(197, 197, 197);
+  background-color: rgb(151, 201, 229);
 }
 
-.titre h1 {
-  font-size: 30px;
-  height: 15%;
-}
 .choice h2 {
   font-size: 30px;
   height: 15%;
@@ -93,7 +89,7 @@ body {
 .integral {
   margin: 29px;
   margin-top: 83px;
-  background-color: white;
+  background-color: rgb(130, 183, 219);
   height: 290px;
   padding: 30px;
   border-radius: 0.9rem;

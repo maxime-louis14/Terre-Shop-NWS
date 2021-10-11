@@ -1,9 +1,10 @@
+  
 Vue.component("accueil", {
   model: {},
 
   template: `
-  <div class"titre"> <h1>Terre Shop </h1> </div>
   <div class="container">
+  <h1>Terre Shop</h1>
     <div class="row">
       <div class="col-4">
         <a
