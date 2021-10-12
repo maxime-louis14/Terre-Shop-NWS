@@ -48,5 +48,5 @@ session_start();
 </div>
 
 </body>
-<script src="../produit/Vue.js"></script>
+<script src="./Vue.js"></script>
 </html>
