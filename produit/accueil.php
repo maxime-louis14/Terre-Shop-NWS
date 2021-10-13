@@ -34,19 +34,20 @@ session_start();
     </div>
   </nav>
 </header>
-      <accueil v-if="actualPage == 'accueil'"></accueil>
-      <div v-if="actualPage !== 'accueil'">
-        <div id="ici" class="container">
-          <div class="row">
-          <div class="col-8">
-            <mug  v-if="actualPage == 'mug'"></mug>
-            <pull v-if="actualPage == 'pull'"></pull>
-            <sac  v-if="actualPage == 'sac'"></sac>
-            <formulaire v-if="actualPage == 'formulaire'"></formulaire>
-          </div>
+
+<accueil v-if="actualPage == 'accueil'"></accueil>
+<div v-if="actualPage !== 'accueil'">
+<div id="ici" class="container">
+    <div class="row">
+      <div class="col-8">
+        <mug  v-if="actualPage == 'mug'"></mug>
+        <pull v-if="actualPage == 'pull'"></pull>
+        <sac  v-if="actualPage == 'sac'"></sac>
+        <formulaire v-if="actualPage == 'formulaire'"></formulaire>
+      </div>
     </div>
 </div>
-
+  
 </body>
 <script src="./Vue.js"></script>
 </html>

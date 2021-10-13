@@ -1,13 +1,12 @@
-
 Vue.component("accueil", {
   model: {},
 
-  template:`<div class="container">
+  template: `<div class="container">
   <h1>Terre Shop</h1>
     <div class="row">
       <div class="col-4">
         <a <div class="choice" @click="choose('mug')">
-          <img src="../image/TerreShop/mug-blanc.jpg"  class="img-fluid" alt="Responsive image">
+          <img src="../image/TerreShop/mug-blanc.jpg" class="img-fluid" alt="Responsive image">
           <h2></h2>
           <p></p>
           </div>
@@ -17,7 +16,7 @@ Vue.component("accueil", {
       <div class="col-4">
        <a
        <div class="choice">
-          <img src="../image/TerreShop/pull-blanc.jpg"  @click="choose('pull')" class="img-fluid" alt="Responsive image">
+          <img src="../image/TerreShop/pull-blanc.jpg"   @click="choose('pull')" class="img-fluid" alt="Responsive image">
           <br>
           <h2></h2>
           <p></p>
@@ -28,7 +27,7 @@ Vue.component("accueil", {
       <div class="col-4">
       <a
         <div class="choice">
-          <img src="../image/TerreShop/NWS-logo.jpg" @click="choose('sac')" class="img-fluid" alt="Responsive image">
+          <img src="../image/TerreShop/NWS-logo.jpg"  @click="choose('sac')" class="img-fluid" alt="Responsive image">
           <h2> </h2>
           <p> </p>
           </div>
@@ -51,31 +50,38 @@ Vue.component("mug", {
     <div class="row">
       <div class="col-4">
         <div class="pxmug">
-          <img src="../image/TerreShop/mug-blanc.jpg">
+        <img src="../image/TerreShop/mug-blanc.jpg" id="Mug0">
         </div>
       </div>
-      <select class="form-select w-25 h-25"  aria-label="Default select example">
+
+      <select  class="form-select w-25 h-25 float-right"  aria-label="Default select example">
       <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="1">Eau</option>
+      <option value="2">Terre</option>
+      <option value="3">Feu</option>
+      <option value="4">Air</option>
     </select>
+
     </div>
   </div>`,
+
+  methods: {},
 }),
   Vue.component("pull", {
     template: `<div class="container">
     <div class="row">
       <div class="col-4">
         <div class="pxmug">
-          <img src="../image/TerreShop/mug-blanc.jpg">
+          <img src="../image/TerreShop/pull-blanc.jpg">
         </div>
       </div>
-      <select class="form-select"  W-25 aria-label="Default select example">
+      
+      <select  class="form-select w-25 h-25 float-right"  aria-label="Default select example">
       <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="1">Eau</option>
+      <option value="2">Terre</option>
+      <option value="3">Feu</option>
+      <option value="4">Air</option>
     </select>
     </div>
   </div>`,
@@ -85,19 +91,26 @@ Vue.component("mug", {
     <div class="row">
       <div class="col-4">
         <div class="pxmug">
-          <img src="../image/TerreShop/mug-blanc.jpg">
+          <img src="../image/TerreShop/NWS-logo.jpg">
         </div>
       </div>
-      <select class="form-select"  W-25 aria-label="Default select example">
+      
+      <select  class="form-select w-25 h-25 float-right"  aria-label="Default select example">
       <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="1">Eau</option>
+      <option value="2">Terre</option>
+      <option value="3">Feu</option>
+      <option value="4">Air</option>
     </select>
     </div>
   </div>`,
   }),
-  Vue.component("reservation", {});
+  Vue.component("reservation", {
+    template: `
+
+
+`,
+  });
 
 const vue = new Vue({
   el: "#app",
@@ -118,6 +131,7 @@ const vue = new Vue({
         name: "sac",
       },
     ],
+   
   },
 
   methods: {
