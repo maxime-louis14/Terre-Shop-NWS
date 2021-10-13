@@ -50,4 +50,6 @@ session_start();
   
 </body>
 <script src="./Vue.js"></script>
+<script src="./index.js"></script>
+<script src="../image/TerreShop/"></script>
 </html>
