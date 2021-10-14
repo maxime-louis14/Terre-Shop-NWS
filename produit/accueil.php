@@ -14,7 +14,6 @@ session_start();
   <title>acceuil</title>
 </head>
 <body>
-  
 <div id="app">
 <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -50,6 +49,9 @@ session_start();
   
 </body>
 <script src="./Vue.js"></script>
-<script src="./index.js"></script>
-<script src="../image/TerreShop/"></script>
+<script src="./script.js"></script>
+<script src="../image/TerreShop/mug/"></script>
+<script src="../image/TerreShop/pull/"></script>
+<script src="../image/TerreShop/sac/"></script>
+
 </html>

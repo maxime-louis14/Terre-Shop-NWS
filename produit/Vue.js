@@ -46,40 +46,37 @@ Vue.component("accueil", {
 });
 
 Vue.component("mug", {
+
+  props: ["data"],
+
   template: `<div class="container">
     <div class="row">
       <div class="col-4">
         <div class="pxmug">
-        <img src="../image/TerreShop/mug/mug-blanc.jpg" id="Mug0">
-        </div>
+        <img v-for="image in images" :src="image.url" :alt="image.alt" />
+         </div>
       </div>
 
-      <select  class="form-select w-25 h-25 float-right"  aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      <option id="1">Eau</option>
-      <option id="2">Terre</option>
-      <option id="3">Feu</option>
-      <option id="4">Air</option>
-    </select>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button id="btn1" type="button" class="btn btn-primary"> Eau   </button>
+        <button id="btn2" type="button" class="btn btn-primary"> Terre </button>
+        <button id="btn3" type="button" class="btn btn-primary" > Feu   </button>
+        <button id="btn4" type="button" class="btn btn-primary" > Air   </button>
+      </div>
+
+      
 
     </div>
   </div>`,
 
-  methods: {
-
-
-  },
-
-
+  methods: {},
 }),
-
-
   Vue.component("pull", {
     template: `<div class="container">
     <div class="row">
       <div class="col-4">
         <div class="pxmug">
-          <img src="../image/TerreShop/pull/pull-blanc.jpg">
+        <img v-for="image in images" :src="image.url" :alt="image.alt" />
         </div>
       </div>
       
@@ -125,21 +122,28 @@ const vue = new Vue({
   data: {
     actualPage: "accueil",
     buttons: [
-      {
-        used: false,
-        name: "mug",
-      },
-      {
-        used: false,
-        name: "pull",
-      },
-      {
-        used: false,
-        name: "sac",
-      },
+    {used: false,name: "mug",},
+    {used: false,name: "pull",},
+    {used: false,name: "sac",},
     ],
-   
+
+    return:{
+    images: [
+      {nom: 'Eau',    description: '#', URL: '../image/TerreShop/mug/04-Eau.jpg',   },
+      {nom: 'Terre',  description: '#', URL: '../image/TerreShop/mug/03-Terre.jpg', },
+      {nom: 'Feu',    description: '#', URL: '../image/TerreShop/mug/01-Feu.jpg',   },
+      {nom: 'Air',    description: '#', URL: '../image/TerreShop/mug/02-Air.jpg',   },
+      ],
+    },
+
   },
+
+  methods: {
+    images: function() {
+      x
+    }
+  },
+
 
   methods: {
     choose: function (pageChoosen) {
@@ -167,3 +171,22 @@ const vue = new Vue({
     },
   },
 });
+
+
+
+
+
+
+
+
+/*
+
+<select  class="form-select w-25 h-25 float-right"  aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      <option id="1">Eau</option>
+      <option id="2">Terre</option>
+      <option id="3">Feu</option>
+      <option id="4">Air</option>
+    </select>
+
+    */
