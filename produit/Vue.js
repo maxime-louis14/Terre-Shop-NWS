@@ -58,18 +58,19 @@ Vue.component("mug", {
       </div>
 
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button id="btn1" type="button" class="btn btn-primary"> Eau   </button>
-        <button id="btn2" type="button" class="btn btn-primary"> Terre </button>
-        <button id="btn3" type="button" class="btn btn-primary" > Feu   </button>
-        <button id="btn4" type="button" class="btn btn-primary" > Air   </button>
+        <button id="btn1" @click="imageSrc" type="button" class="btn btn-primary"> Eau   </button>
+        <button id="btn2" @click="" type="button" class="btn btn-primary"> Terre </button>
+        <button id="btn3" @click="" type="button" class="btn btn-primary"> Feu   </button>
+        <button id="btn4" @click="" type="button" class="btn btn-primary"> Air   </button>
       </div>
-
-      
 
     </div>
   </div>`,
 
-  methods: {},
+  methods: {
+    
+  },
+
 }),
   Vue.component("pull", {
     template: `<div class="container">
@@ -122,28 +123,42 @@ const vue = new Vue({
   data: {
     actualPage: "accueil",
     buttons: [
-    {used: false,name: "mug",},
-    {used: false,name: "pull",},
-    {used: false,name: "sac",},
+      { used: false, name: "mug" },
+      { used: false, name: "pull" },
+      { used: false, name: "sac" },
     ],
 
-    return:{
-    images: [
-      {nom: 'Eau',    description: '#', URL: '../image/TerreShop/mug/04-Eau.jpg',   },
-      {nom: 'Terre',  description: '#', URL: '../image/TerreShop/mug/03-Terre.jpg', },
-      {nom: 'Feu',    description: '#', URL: '../image/TerreShop/mug/01-Feu.jpg',   },
-      {nom: 'Air',    description: '#', URL: '../image/TerreShop/mug/02-Air.jpg',   },
+      images: [
+        {
+          id: 1,
+          src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
+        },
+        {
+          id: 2,
+          src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
+        },
+        {
+          id: 3,
+          src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
+        },
+        {
+          id: 4,
+          src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
+        },
       ],
-    },
-
+    
   },
 
+  // je cherche a affivher les image des mug
+  mounted() {
+    switchImage();
+  },
   methods: {
-    images: function() {
-      x
-    }
+    switchImage() {
+      this.image = this.images[this.index];
+      this.index = (this.index + 1) % this.images.length;
+    },
   },
-
 
   methods: {
     choose: function (pageChoosen) {
@@ -153,6 +168,8 @@ const vue = new Vue({
           this.buttons[i].used = true;
         }
       }
+
+      // ici aussi
 
       // Quand je reviens sur accueil, je veux que tout les donnée s'efface.  C'est le if.
 
@@ -171,8 +188,6 @@ const vue = new Vue({
     },
   },
 });
-
-
 
 
 

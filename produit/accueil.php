@@ -39,10 +39,11 @@ session_start();
 <div id="ici" class="container">
     <div class="row">
       <div class="col-8">
-        <mug  v-if="actualPage == 'mug'"></mug>
+        <mug  v-if="actualPage == 'mug'" :data="images"></mug>
         <pull v-if="actualPage == 'pull'"></pull>
         <sac  v-if="actualPage == 'sac'"></sac>
         <formulaire v-if="actualPage == 'formulaire'"></formulaire>
+
       </div>
     </div>
 </div>
