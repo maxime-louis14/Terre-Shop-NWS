@@ -44,34 +44,29 @@ Vue.component("accueil", {
     },
   },
 });
-
+// La vue ici c'est ma (page) mug ou on peux faire le choix du mug que l'on veut
 Vue.component("mug", {
-
   props: ["data"],
 
   template: `<div class="container">
     <div class="row">
       <div class="col-4">
         <div class="pxmug">
-        <img v-for="image in images" :src="image.url" :alt="image.alt" />
+        <img src="../image/TerreShop/mug/mug-blanc.jpg"/>
+        <div class="btn-group" role="group" aria-label="Basic example">
+                <button  @click="image" type="button" class="btn btn-primary"> Eau </button>
+                <button  @click="image" type="button" class="btn btn-primary"> Terre </button>
+                <button  @click="image" type="button" class="btn btn-primary"> Feu   </button>
+                <button  @click="image" type="button" class="btn btn-primary"> Air   </button>
+              </div>
          </div>
       </div>
-
-      <div class="btn-group" role="group" aria-label="Basic example">
-        <button id="btn1" @click="imageSrc" type="button" class="btn btn-primary"> Eau   </button>
-        <button id="btn2" @click="" type="button" class="btn btn-primary"> Terre </button>
-        <button id="btn3" @click="" type="button" class="btn btn-primary"> Feu   </button>
-        <button id="btn4" @click="" type="button" class="btn btn-primary"> Air   </button>
-      </div>
-
     </div>
   </div>`,
-
-  methods: {
-    
-  },
-
 }),
+
+//C'est la vue des pull
+
   Vue.component("pull", {
     template: `<div class="container">
     <div class="row">
@@ -91,6 +86,7 @@ Vue.component("mug", {
     </div>
   </div>`,
   }),
+  // Ici c'est les sac
   Vue.component("sac", {
     template: `<div class="container">
     <div class="row">
@@ -110,12 +106,16 @@ Vue.component("mug", {
     </div>
   </div>`,
   }),
+
+  // Ici ça va étre le panier des produits
   Vue.component("reservation", {
     template: `
 
 
 `,
   });
+
+//  la nouvelle instance Vue.#app
 
 const vue = new Vue({
   el: "#app",
@@ -127,37 +127,34 @@ const vue = new Vue({
       { used: false, name: "pull" },
       { used: false, name: "sac" },
     ],
+    // Ici c'est un tableau d'images pour pouvoir sélectionner limages en fonction du choix que tu fais la c'est pour les mug
+    images: [
+      {
+        id: 1,
+        src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
+      },
+      {
+        id: 2,
+        src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
+      },
+      {
+        id: 3,
+        src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
+      },
+      {
+        id: 4,
+        src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
+      },
+    ],
 
-      images: [
-        {
-          id: 1,
-          src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
-        },
-        {
-          id: 2,
-          src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
-        },
-        {
-          id: 3,
-          src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
-        },
-        {
-          id: 4,
-          src: "https://cdn.discordapp.com/attachments/776757545280471102/897872245043642388/04-Eau.jpg",
-        },
-      ],
-    
-  },
-
-  // je cherche a affivher les image des mug
-  mounted() {
-    switchImage();
-  },
-  methods: {
-    switchImage() {
-      this.image = this.images[this.index];
-      this.index = (this.index + 1) % this.images.length;
+    methods: {
+      images: function() {
+        for (i = 0; i < this.images.length; i++) {
+          
+        }
+      },
     },
+
   },
 
   methods: {
@@ -188,20 +185,3 @@ const vue = new Vue({
     },
   },
 });
-
-
-
-
-
-
-/*
-
-<select  class="form-select w-25 h-25 float-right"  aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      <option id="1">Eau</option>
-      <option id="2">Terre</option>
-      <option id="3">Feu</option>
-      <option id="4">Air</option>
-    </select>
-
-    */
