@@ -48,17 +48,18 @@ Vue.component("accueil", {
 Vue.component("mug", {
 
   props: ["data"],
-
+  
   template: `<div class="container">
     <div class="row">
       <div class="col-4">
         <div class="pxmug">
-        <img v-for="image in images" :src="image.url" :alt="image.alt" />
-         </div>
+        <img :src="currentUrl" @click="nextUrl()">
+        
+        </div>
       </div>
 
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button id="btn1" @click="imageSrc" type="button" class="btn btn-primary"> Eau   </button>
+        <button id="btn1" @click="changeSource" type="button" class="btn btn-primary"> Eau   </button>
         <button id="btn2" @click="" type="button" class="btn btn-primary"> Terre </button>
         <button id="btn3" @click="" type="button" class="btn btn-primary"> Feu   </button>
         <button id="btn4" @click="" type="button" class="btn btn-primary"> Air   </button>
@@ -73,6 +74,7 @@ Vue.component("mug", {
 
 }),
   Vue.component("pull", {
+
     template: `<div class="container">
     <div class="row">
       <div class="col-4">
@@ -91,6 +93,8 @@ Vue.component("mug", {
     </div>
   </div>`,
   }),
+
+
   Vue.component("sac", {
     template: `<div class="container">
     <div class="row">
@@ -121,13 +125,15 @@ const vue = new Vue({
   el: "#app",
 
   data: {
+
     actualPage: "accueil",
+
     buttons: [
       { used: false, name: "mug" },
       { used: false, name: "pull" },
       { used: false, name: "sac" },
     ],
-
+        
       images: [
         {
           id: 1,
@@ -151,7 +157,7 @@ const vue = new Vue({
 
   // je cherche a affivher les image des mug
   mounted() {
-    switchImage();
+    this.switchImage();
   },
   methods: {
     switchImage() {
@@ -159,6 +165,13 @@ const vue = new Vue({
       this.index = (this.index + 1) % this.images.length;
     },
   },
+
+  methods: {
+    nextUrl: () => {
+        const currentIndex = urls.findIndex(url => url === currentUrl)
+        this.currentUrl = urls[currentIndex++]
+    }
+},
 
   methods: {
     choose: function (pageChoosen) {
